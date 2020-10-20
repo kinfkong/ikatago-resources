@@ -25,8 +25,8 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install cuda
 
 #install cudnn
-RUN wget --no-check-certificate https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cudnn-${CUDA_VERSION}-linux-x64-v8.0.3.33.tgz
-RUN tar -xzvf ./cudnn-${CUDA_VERSION}-linux-x64-v8.0.3.33.tgz
+RUN wget --no-check-certificate https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cudnn-${CUDA_VERSION}-linux-x64-v7.6.3.30.tgz
+RUN tar -xzvf ./cudnn-${CUDA_VERSION}-linux-x64-v7.6.3.30.tgz
 RUN cp cuda/include/cudnn.h /usr/local/cuda-${CUDA_VERSION}/include
 RUN cp cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
 
