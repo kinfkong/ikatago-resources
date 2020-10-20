@@ -12,6 +12,9 @@ then
     exit -1
 fi
 
+export CC=`/usr/bin/gcc-7`
+export CXX=`/user/bin/g++-7`
+
 g++ --version
 cmake --version 
 
