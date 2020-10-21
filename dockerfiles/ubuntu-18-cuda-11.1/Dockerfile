@@ -31,15 +31,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install cuda
 RUN wget --no-check-certificate https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cudnn-${CUDA_VERSION}-linux-x64-v8.0.4.30.tgz
 RUN tar -xzvf ./cudnn-${CUDA_VERSION}-linux-x64-v8.0.4.30.tgz
 
-RUN cp cuda/include/cudnn.h /usr/local/cuda-${CUDA_VERSION}/include
+RUN cp cuda/include/*.h /usr/local/cuda-${CUDA_VERSION}/include
 RUN cp cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
 
 RUN apt-get install -y libzip-dev zlib1g-dev libboost-filesystem-dev
 
-FROM ubuntu:18.04 
-
-COPY --from=original /usr /usr
-COPY --from=original /etc/alternatives /etc/alternatives
 WORKDIR /katabuild-env
 COPY ./build.sh ./build
 COPY ./run-katago.sh ./run-katago.sh
