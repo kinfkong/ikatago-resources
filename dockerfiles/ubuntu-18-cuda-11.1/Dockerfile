@@ -18,7 +18,7 @@ RUN chmod +x cmake-3.18.1-Linux-x86_64.sh
 RUN yes | ./cmake-3.18.1-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir
 
 # install cuda for ubuntu1804-cuda11.1
-RUN echo OK2 && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
 RUN mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
 RUN wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
 RUN dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
