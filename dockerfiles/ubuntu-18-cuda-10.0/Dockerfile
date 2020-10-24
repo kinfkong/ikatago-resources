@@ -32,7 +32,7 @@ RUN tar -xzvf ./cudnn-${CUDA_VERSION}-linux-x64-v7.6.5.32.tgz
 RUN cp -P cuda/include/*.h /usr/local/cuda-${CUDA_VERSION}/include
 RUN cp -P cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
 
-RUN apt-get install -y libzip-dev zlib1g-dev libboost-filesystem-dev
+RUN apt-get install -y zip libzip-dev zlib1g-dev libboost-filesystem-dev
 
 WORKDIR /katabuild-env
 COPY ./build.sh ./build
