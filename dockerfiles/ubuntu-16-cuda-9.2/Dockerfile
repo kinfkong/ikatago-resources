@@ -13,7 +13,7 @@ RUN wget https://www.openssl.org/source/openssl-1.1.1c.tar.gz
 RUN tar xvf openssl-1.1.1c.tar.gz && cd openssl-1.1.1c && ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' && make && make install && cd -
 
 # upgrade cmake
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-Linux-x86_64.sh
+RUN wget https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cmake-3.18.1-Linux-x86_64.sh
 RUN chmod +x cmake-3.18.1-Linux-x86_64.sh 
 RUN yes | ./cmake-3.18.1-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir
 
