@@ -32,7 +32,7 @@ RUN wget --no-check-certificate https://ikatago-resources.oss-cn-beijing.aliyunc
 RUN tar -xzvf ./cudnn-${CUDA_VERSION}-linux-x64-v8.0.4.30.tgz
 
 RUN cp cuda/include/*.h /usr/local/cuda-${CUDA_VERSION}/include
-RUN cp cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
+RUN cp -P cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
 
 RUN apt-get install -y libzip-dev zlib1g-dev libboost-filesystem-dev
 
