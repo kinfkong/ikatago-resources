@@ -1,4 +1,4 @@
-FROM ubuntu:16.04 as original
+FROM ubuntu:16.04
 ENV CUDA_VERSION=9.2
 # upgrade gcc
 RUN apt-get update && apt-get install -y git cmake wget curl software-properties-common 
@@ -32,11 +32,7 @@ RUN cp cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
 
 RUN apt-get install -y libzip-dev zlib1g-dev libboost-filesystem-dev
 
-FROM ubuntu:16.04 
 
-COPY --from=original /usr /usr-new
-RUN rm -rf /usr && mv /usr-new /usr
-COPY --from=original /etc/alternatives /etc/alternatives
 WORKDIR /katabuild-env
 COPY ./build.sh ./build
 COPY ./run-katago.sh ./run-katago.sh
