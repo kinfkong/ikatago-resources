@@ -38,6 +38,8 @@ cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.65.1  ./$FULL_NAME
 cp /usr/lib/x86_64-linux-gnu/libboost_system.so.1.65.1 ./$FULL_NAME
 cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25 ./$FULL_NAME
 cp /lib/x86_64-linux-gnu/libm-2.27.so ./$FULL_NAME
+cp /usr/local/lib/libssl.so.1.1 ./$FULL_NAME
+cp /usr/local/lib/libcrypto.so.1.1 ./$FULL_NAME
 cd -
 
 cd ./katago/$FULL_NAME
