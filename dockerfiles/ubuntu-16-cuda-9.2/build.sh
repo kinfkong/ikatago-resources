@@ -20,7 +20,7 @@ cmake --version
 
 cd katago/cpp
 rm -rf ./CMakeCache.txt
-cmake . -DUSE_BACKEND=CUDA -DNO_GIT_REVISION=1 -DBUILD_DISTRIBUTED=1
+cmake . -DUSE_BACKEND=CUDA -DBUILD_DISTRIBUTED=1
 make clean && make
 cd -
 

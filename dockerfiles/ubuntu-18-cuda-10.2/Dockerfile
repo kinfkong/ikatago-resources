@@ -35,11 +35,6 @@ RUN cp cuda/lib64/libcudnn* /usr/local/cuda-${CUDA_VERSION}/lib64
 
 RUN apt-get install -y libzip-dev zlib1g-dev libboost-filesystem-dev
 
-FROM ubuntu:18.04 
-
-COPY --from=original /usr /usr-new
-RUN rm -rf /usr && mv /usr-new /usr
-COPY --from=original /etc/alternatives /etc/alternatives
 WORKDIR /katabuild-env
 COPY ./build.sh ./build
 COPY ./run-katago.sh ./run-katago.sh
