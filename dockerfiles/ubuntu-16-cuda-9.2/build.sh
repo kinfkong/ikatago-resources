@@ -20,7 +20,7 @@ cmake --version
 
 cd katago/cpp
 rm -rf ./CMakeCache.txt
-cmake . -DUSE_BACKEND=CUDA -DNO_GIT_REVISION=1 -DBUILD_DISTRIBUTED=1
+cmake . -DUSE_BACKEND=CUDA -DBUILD_DISTRIBUTED=1
 make clean && make
 cd -
 
@@ -41,6 +41,9 @@ cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.58.0  ./$FULL_NAME
 cp /usr/lib/x86_64-linux-gnu/libboost_system.so.1.58.0 ./$FULL_NAME
 cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28 ./$FULL_NAME
 cp /lib/x86_64-linux-gnu/libm-2.23.so ./$FULL_NAME
+cp /usr/local/lib/libssl.so.1.1 ./$FULL_NAME
+cp /usr/local/lib/libcrypto.so.1.1 ./$FULL_NAME
+
 cd -
 
 cd ./katago/$FULL_NAME
