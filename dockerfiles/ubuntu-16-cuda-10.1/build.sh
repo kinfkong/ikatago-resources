@@ -1,6 +1,6 @@
 #!/bin/bash
-CUDA_VERSION=10.2
-SYSTEM_VERSION=ubuntu-18
+CUDA_VERSION=10.1
+SYSTEM_VERSION=ubuntu-16
 export PATH=/usr/local/cuda-$CUDA_VERSION/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_VERSION/lib64:$LD_LIBRARY_PATH
 
