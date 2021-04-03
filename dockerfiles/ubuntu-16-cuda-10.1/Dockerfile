@@ -1,8 +1,14 @@
 FROM ubuntu:16.04 as original
 ENV CUDA_VERSION=10.1
-COPY ./sources.list /etc/apt/sources.list
 # upgrade gcc
 RUN apt-get update && apt-get install -y git cmake wget curl software-properties-common 
+RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test
+RUN apt update
+RUN apt install g++-7 -y
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 \
+                         --slave /usr/bin/g++ g++ /usr/bin/g++-7 
+RUN update-alternatives --config gcc
+
 #RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test
 RUN apt-get install build-essential software-properties-common -y
 RUN wget https://www.openssl.org/source/openssl-1.1.1c.tar.gz
