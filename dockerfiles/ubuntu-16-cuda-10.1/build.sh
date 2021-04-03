@@ -46,7 +46,7 @@ cd ./katago/$FULL_NAME
 ln -s ./libz.so.1.2.11 ./libz.so.1
 ln -s ./libzip.so.4.0.0 ./libzip.so.4
 ln -s ./libstdc++.so.6.0.25 ./libstdc++.so.6
-ln -s ./libm-2.27.so ./libm.so.6
+ln -s ./libm-2.23.so ./libm.so.6
 
 
 
