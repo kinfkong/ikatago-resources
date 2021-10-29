@@ -16,9 +16,9 @@ RUN tar xvf openssl-1.1.1c.tar.gz && cd openssl-1.1.1c && ./config -Wl,--enable-
 
 # upgrade cmake
 ENV CMAKE_VERSION=3.20.6
-RUN wget https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cmake-${CMAKE_VERSION}-Linux-x86_64.sh
-RUN chmod +x cmake-${CMAKE_VERSION}Linux-x86_64.sh 
-RUN yes | ./cmake-${CMAKE_VERSION}-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir
+RUN wget https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cmake-${CMAKE_VERSION}-linux-x86_64.sh
+RUN chmod +x cmake-${CMAKE_VERSION}-linux-x86_64.sh 
+RUN yes | ./cmake-${CMAKE_VERSION}-linux-x86_64.sh --prefix=/usr/local --exclude-subdir
 
 # install cuda for ubuntu1604-cuda10.1
 RUN wget https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cuda-repo-ubuntu1604-10-1-local-10.1.105-418.39_1.0-1_amd64.deb
