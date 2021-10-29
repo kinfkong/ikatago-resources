@@ -13,9 +13,10 @@ RUN wget https://www.openssl.org/source/openssl-1.1.1c.tar.gz
 RUN tar xvf openssl-1.1.1c.tar.gz && cd openssl-1.1.1c && ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' && make && make install && cd -
 
 # upgrade cmake
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-Linux-x86_64.sh
-RUN chmod +x cmake-3.18.1-Linux-x86_64.sh 
-RUN yes | ./cmake-3.18.1-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir
+ENV CMAKE_VERSION=3.20.6
+RUN wget https://ikatago-resources.oss-cn-beijing.aliyuncs.com/cmake-${CMAKE_VERSION}-Linux-x86_64.sh
+RUN chmod +x cmake-${CMAKE_VERSION}Linux-x86_64.sh 
+RUN yes | ./cmake-${CMAKE_VERSION}-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir
 
 # install cuda for ubuntu1804-cuda10.2
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
