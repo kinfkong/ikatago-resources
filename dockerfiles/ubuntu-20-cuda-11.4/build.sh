@@ -17,37 +17,33 @@ cmake --version
 
 build_katago () {
     BACKEND_TYPE=$1
-    cd katago/cpp
+    cd KataGo/cpp
     rm -rf ./CMakeCache.txt
     cmake . -DUSE_BACKEND=$BACKEND_TYPE -DBUILD_DISTRIBUTED=1
-    make clean && make
+    make clean && make -j
     cd -
 
     #echo $katago_name
     FULL_NAME=$katago_name-$SYSTEM_VERSION-cuda-$CUDA_VERSION-$BACKEND_TYPE
     echo $FULL_NAME
 
-    cd katago
+    cd KataGo
     rm -rf ./$FULL_NAME && mkdir -p ./$FULL_NAME
     cp ./cpp/katago ./$FULL_NAME/katago
     cp /katabuild-env/run-katago.sh ./$FULL_NAME
     chmod +x ./$FULL_NAME/run-katago.sh
     chmod +x ./$FULL_NAME/katago
-    cp /lib/x86_64-linux-gnu/libz.so.1.2.11 ./$FULL_NAME
-    cp /usr/lib/x86_64-linux-gnu/libzip.so.4.0.0 ./$FULL_NAME
-    cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.65.1  ./$FULL_NAME
-    cp /usr/lib/x86_64-linux-gnu/libboost_system.so.1.65.1 ./$FULL_NAME
-    cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25 ./$FULL_NAME
-    cp /lib/x86_64-linux-gnu/libm-2.27.so ./$FULL_NAME
-    cp /usr/local/lib/libssl.so.1.1 ./$FULL_NAME
-    cp /usr/local/lib/libcrypto.so.1.1 ./$FULL_NAME
+    
+    cp /usr/lib/x86_64-linux-gnu/libzip.so.5.0.0 ./$FULL_NAME
+    cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28 ./$FULL_NAME
+    cp /lib/x86_64-linux-gnu/libm-2.31.so ./$FULL_NAME
+
     cd -
 
-    cd ./katago/$FULL_NAME
-    ln -s ./libz.so.1.2.11 ./libz.so.1
-    ln -s ./libzip.so.4.0.0 ./libzip.so.4
-    ln -s ./libstdc++.so.6.0.25 ./libstdc++.so.6
-    ln -s ./libm-2.27.so ./libm.so.6
+    cd ./KataGo/$FULL_NAME
+    ln -s ./libzip.so.5.0.0 ./libzip.so.5
+    ln -s ./libstdc++.so.6.0.28 ./libstdc++.so.6
+    ln -s ./libm-2.31.so ./libm.so.6
     cd - 
 }
 
