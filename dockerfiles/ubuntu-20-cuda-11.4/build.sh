@@ -34,14 +34,14 @@ build_katago () {
     chmod +x ./$FULL_NAME/run-katago.sh
     chmod +x ./$FULL_NAME/katago
     
-    cp /usr/lib/x86_64-linux-gnu/libzip.so.5.0.0 ./$FULL_NAME
+    cp /usr/lib/x86_64-linux-gnu/libzip.so.5.0 ./$FULL_NAME
     cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28 ./$FULL_NAME
     cp /lib/x86_64-linux-gnu/libm-2.31.so ./$FULL_NAME
 
     cd -
 
     cd ./KataGo/$FULL_NAME
-    ln -s ./libzip.so.5.0.0 ./libzip.so.5
+    ln -s ./libzip.so.5.0 ./libzip.so.5
     ln -s ./libstdc++.so.6.0.28 ./libstdc++.so.6
     ln -s ./libm-2.31.so ./libm.so.6
     cd - 
