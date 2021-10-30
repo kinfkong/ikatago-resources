@@ -44,7 +44,8 @@ RUN apt-get install -y ocl-icd-opencl-dev clinfo
 RUN wget --no-check-certificate https://ikatago-resources.oss-cn-beijing.aliyuncs.com/nv-tensorrt-repo-ubuntu2004-cuda11.4-trt8.2.0.6-ea-20210922_1-1_amd64.deb
 RUN dpkg -i nv-tensorrt-repo-ubuntu2004-cuda11.4-trt8.2.0.6-ea-20210922_1-1_amd64.deb
 RUN apt-key add /var/nv-tensorrt-repo-ubuntu2004-cuda11.4-trt8.2.0.6-ea-20210922/7fa2af80.pub
-RUN apt-get install -y python3-libnvinfer-dev
+RUN apt-get update
+RUN apt-get install -y tensorrt
 
 WORKDIR /katabuild-env
 COPY ./build.sh ./build
