@@ -32,12 +32,12 @@ chmod +x ./$FULL_NAME/run-katago.sh
 chmod +x ./$FULL_NAME/katago
 
 
-cp /lib/x86_64-linux-gnu/libz.so.1.2.11 ./$FULL_NAME
+cp /lib/x86_64-linux-gnu/libz.so.1.2.8 ./$FULL_NAME
 cp /usr/lib/x86_64-linux-gnu/libzip.so.4.0.0 ./$FULL_NAME
-cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.65.1  ./$FULL_NAME
-cp /usr/lib/x86_64-linux-gnu/libboost_system.so.1.65.1 ./$FULL_NAME
-cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25 ./$FULL_NAME
-cp /lib/x86_64-linux-gnu/libm-2.27.so ./$FULL_NAME
+cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.58.0  ./$FULL_NAME
+cp /usr/lib/x86_64-linux-gnu/libboost_system.so.1.58.0 ./$FULL_NAME
+cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28 ./$FULL_NAME
+cp /lib/x86_64-linux-gnu/libm-2.23.so ./$FULL_NAME
 cp /usr/local/lib/libssl.so.1.1 ./$FULL_NAME
 cp /usr/local/lib/libcrypto.so.1.1 ./$FULL_NAME
 cd -
@@ -45,8 +45,8 @@ cd -
 cd ./katago/$FULL_NAME
 ln -s ./libz.so.1.2.11 ./libz.so.1
 ln -s ./libzip.so.4.0.0 ./libzip.so.4
-ln -s ./libstdc++.so.6.0.25 ./libstdc++.so.6
-ln -s ./libm-2.27.so ./libm.so.6
+ln -s ./libstdc++.so.6.0.28 ./libstdc++.so.6
+ln -s ./libm-2.23.so ./libm.so.6
 
 
 
